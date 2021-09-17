@@ -11,7 +11,7 @@ import { injected, lattice, NetworkContextName, portis, walletconnect, walletlin
 import { useWalletModalToggle } from '../../state/application/hooks'
 import { shortenAddress } from '../../utils'
 import { ButtonSecondary } from '../Button'
-import { ReactComponent as Chef } from '../../assets/images/chef.svg'
+import Identicon from '../Identicon'
 import WalletModal from '../WalletModal'
 
 const IconWrapper = styled.div<{ size?: number }>`
@@ -47,7 +47,7 @@ const Web3StatusError = styled(Web3StatusGeneric)`
     }
 `
 
-const Web3StatusConnect = styled(Web3StatusGeneric)<{ faded?: boolean }>`
+const Web3StatusConnect = styled(Web3StatusGeneric) <{ faded?: boolean }>`
     background-color: ${({ theme }) => theme.primary4};
     border: none;
     color: ${({ theme }) => theme.primaryText1};
@@ -95,8 +95,7 @@ const NetworkIcon = styled(Activity)`
 // eslint-disable-next-line react/prop-types
 function StatusIcon({ connector }: { connector: AbstractConnector }) {
     if (connector === injected) {
-        return <Chef width={20} height={20} />
-        // return <Identicon />
+        return <Identicon />
     } else if (connector === walletconnect) {
         return (
             <IconWrapper size={16}>
@@ -173,7 +172,7 @@ export default function Web3Status(): JSX.Element | null {
     return (
         <div className="w-auto flex items-center rounded bg-dark-900 hover:bg-dark-800 p-0.5 whitespace-nowrap text-sm font-bold cursor-pointer select-none pointer-events-auto">
             <Web3StatusInner />
-            <WalletModal/>
+            <WalletModal />
         </div>
     )
 }

@@ -1,6 +1,6 @@
 {
-    "name": "react-dapp-bolierplate",
-    "description": "React dapp Boliterplate",
+    "name": "messengeth",
+    "description": "Messaging app on Ethereum blockchain",
     "private": true,
     "lint-staged": {
         "*.{js,jsx,ts,tsx}": [

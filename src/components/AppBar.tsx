@@ -17,7 +17,7 @@ function AppBar(): JSX.Element {
                 {() => (
                     <>
                         <div className="px-4 py-1.5">
-                            <div className="flex items-center justify-between h-16">
+                            <div className="flex items-center justify-end h-16">
                                 <div className="flex items-center justify-between space-x-2">
                                     {library && account && (
                                         <>

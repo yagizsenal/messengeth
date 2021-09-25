@@ -89,7 +89,8 @@
         "typescript": "4.2.4"
     },
     "dependencies": {
-        "@metamask/jazzicon": "^2.0.0",
+        "@dicebear/avatars": "^4.9.1",
+        "@dicebear/personas": "^4.9.1",
         "dotenv": "^10.0.0"
     },
     "scripts": {

@@ -1,28 +1,16 @@
-import {useEffect, useRef} from 'react'
-import styled from 'styled-components'
-import {useActiveWeb3React} from '../../hooks/useActiveWeb3React'
+import {createAvatar} from "@dicebear/avatars";
+import * as style from '@dicebear/personas';
 
-const jazzicon = require('@metamask/jazzicon')
-
-const StyledIdenticonContainer = styled.div`
-    height: 1rem;
-    width: 1rem;
-    border-radius: 1.125rem;
-    background-color: ${({theme}) => theme.bg4};
-`
-
-export default function Identicon(): JSX.Element {
-    const ref = useRef<HTMLDivElement>()
-
-    const {account} = useActiveWeb3React()
-
-    useEffect(() => {
-        if (account && ref.current) {
-            ref.current.innerHTML = ''
-            ref.current.appendChild(jazzicon(16, parseInt(account.slice(2, 10), 16)))
-        }
-    }, [account])
-
-    // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/30451
-    return <StyledIdenticonContainer ref={ref as any}/>
+interface IdenticonProps {
+    address: string
 }
+
+export default function Identicon({address}: IdenticonProps): JSX.Element {
+    const avatar = createAvatar(style, {
+        seed: address, translateY: -10, backgroundColor: "#ffffff", radius: 50, scale: 75
+    })
+    return (
+        <img src={"data:image/svg+xml;utf8," + encodeURIComponent(avatar)} alt="avatar"/>
+    )
+}
+

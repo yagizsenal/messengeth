@@ -7,7 +7,7 @@ interface IdenticonProps {
 
 export default function Identicon({address}: IdenticonProps): JSX.Element {
     const avatar = createAvatar(style, {
-        seed: address, translateY: -10, backgroundColor: "#ffffff", radius: 50, scale: 75
+        seed: address, translateY: 5, backgroundColor: "#ffffff", radius: 50, scale: 140
     })
     return (
         <img src={"data:image/svg+xml;utf8," + encodeURIComponent(avatar)} alt="avatar"/>

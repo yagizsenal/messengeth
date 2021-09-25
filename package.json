@@ -58,7 +58,6 @@
         "ethers": "5.2.0",
         "fuse.js": "6.4.6",
         "husky": "6.0.0",
-        "jazzicon": "1.5.0",
         "lint-staged": "11.0.0",
         "polished": "4.1.2",
         "postcss": "7.0.35",
@@ -90,6 +89,7 @@
         "typescript": "4.2.4"
     },
     "dependencies": {
+        "@metamask/jazzicon": "^2.0.0",
         "dotenv": "^10.0.0"
     },
     "scripts": {

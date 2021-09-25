@@ -46,7 +46,6 @@ module.exports = {
             'light-brown': '#FEC464',
             'light-yellow': '#FFD166',
             'cyan-blue': '#0993EC',
-            pink: '#F338C3',
 
             'dark-pink': '#221825',
             'dark-blue': '#0F182A',
@@ -63,7 +62,12 @@ module.exports = {
             // 'high-emphesis': '#E3E3E3',
             primary: '#BFBFBF',
             secondary: '#7F7F7F',
-            'low-emphesis': '#575757'
+            'low-emphesis': '#575757',
+            'theme-primary': '#2391EB',
+            'theme-secondary': '#6BB2ED',
+            'theme-tertiary': '#1C71B8',
+            'theme-surface-1': '#10426B',
+            'theme-surface-2': '#30516B'
         },
         screens: {
             sm: '480px',
@@ -146,7 +150,7 @@ module.exports = {
                 ...defaultTheme.lineHeight,
                 '48px': '48px'
             },
-            backgroundImage: theme => ({
+            backgroundImage: _ => ({
                 ...defaultTheme.backgroundImage,
             }),
             fontFamily: {
@@ -198,9 +202,9 @@ module.exports = {
             },
             keyframes: {
                 ellipsis: {
-                    '0%': { content: '"."' },
-                    '33%': { content: '".."' },
-                    '66%': { content: '"..."' }
+                    '0%': {content: '"."'},
+                    '33%': {content: '".."'},
+                    '66%': {content: '"..."'}
                 }
             },
             minHeight: {
@@ -228,7 +232,7 @@ module.exports = {
         require('@tailwindcss/line-clamp'),
         require('@tailwindcss/aspect-ratio'),
         require('tailwindcss-border-gradient-radius'),
-        plugin(function({ addUtilities }) {
+        plugin(function ({addUtilities}) {
             addUtilities(
                 {
                     '.border-gradient': {

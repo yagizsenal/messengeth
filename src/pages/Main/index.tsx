@@ -1,31 +1,34 @@
 import ChatList from '../../components/ChatList'
+import {Profile} from "../../components/Profile";
+import {ChatContent} from "../../components/ChatContent";
 
 export default function Main(): JSX.Element {
 
     return (
-        <div className='grid grid-cols-3 w-full h-full'>
-            <div className='flex flex-grow'>
+        <div className='grid grid-cols-5 w-full h-full mx-8 my-5 bg-theme-surface-1'>
+            <div className='flex flex-col w-full'>
+                <Profile key="profile"/>
                 <ChatList chats={[
                     {
-                        username: 'hello1',
+                        account: 'hello1',
                         lastMessage: 'lastMessage1',
                         lastMessageTimestamp: 1632081803
                     },
                     {
-                        username: 'hello2',
+                        account: 'hello2',
                         lastMessage: 'lastMessage2',
                         lastMessageTimestamp: 1632081813
                     },
                     {
-                        username: 'hello3',
+                        account: 'hello3',
                         lastMessage: 'lastMessage3',
                         lastMessageTimestamp: 1632081823
                     }
                 ]
                 }/>
             </div>
-            <div className="col-span-2">
-                Chat Content Will Come Here
+            <div className="col-span-4">
+                <ChatContent account={'hello2'}/>
             </div>
         </div>
     )

@@ -1,21 +1,21 @@
-import { Suspense, useEffect, useRef, useState } from 'react'
-import { useLocation } from 'react-router-dom'
-import { AppBar, Footer } from '../components'
+import {Suspense, useEffect, useRef, useState} from 'react'
+import {useLocation} from 'react-router-dom'
+import {AppBar, Footer} from '../components'
 import Web3ReactManager from '../components/Web3ReactManager'
 import Routes from '../routes'
 
 function App(): JSX.Element {
     const bodyRef = useRef<any>(null)
 
-    const { pathname } = useLocation()
+    const {pathname} = useLocation()
 
     const [wrapperClassList, setWrapperClassList] = useState(
-        'flex flex-col flex-1 items-center justify-start w-screen h-full overflow-y-auto overflow-x-hidden z-0 pt-4 sm:pt-8 px-4 md:pt-10 pb-20'
+        'flex flex-col flex-1 items-center justify-start w-screen h-full overflow-y-auto overflow-x-hidden z-0 px-40 py-10'
     )
 
     useEffect(() => {
         setWrapperClassList(
-            'flex flex-col flex-1 items-center justify-start w-screen h-full overflow-y-auto overflow-x-hidden z-0 pt-4 sm:pt-8 px-4 md:pt-10 pb-20'
+            'flex flex-col flex-1 items-center justify-start w-screen h-full overflow-y-auto overflow-x-hidden z-0 px-40 py-10'
         )
     }, [pathname])
 
@@ -28,11 +28,11 @@ function App(): JSX.Element {
 
     return (
         <Suspense fallback={null}>
-            <div className="flex flex-col items-start overflow-x-hidden h-screen">
-                <AppBar />
+            <div className="flex flex-col items-start overflow-x-hidden h-screen bg-theme-surface-2">
+                <AppBar/>
                 <div ref={bodyRef} className={wrapperClassList}>
                     <Web3ReactManager>
-                        <Routes />
+                        <Routes/>
                     </Web3ReactManager>
                 </div>
                 <Footer/>
